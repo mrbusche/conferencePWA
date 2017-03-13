@@ -5,13 +5,15 @@
          "STARTTIME":"August, 06 2017 12:00:00",
          "ENDTIME":"August, 06 2017 12:50:00",
          "TITLE":"PWAs for Life",
-         "SPEAKER":"Matt Busche"
+         "SPEAKER":"Matt Busche",
+         "DESCRIPTION":"Overview of PWAs"
       },
       {
          "STARTTIME":"August, 06 2017 13:00:00",
          "ENDTIME":"August, 06 2017 13:50:00",
          "TITLE":"All the Things",
-         "SPEAKER":"Taryn Busche"
+         "SPEAKER":"Taryn Busche",
+         "DESCRIPTION":"We'll talk about all the things"
       }
    ]
 }

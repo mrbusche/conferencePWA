@@ -5,8 +5,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta name="description" content="Conference PWA POC">
 		<meta name="author" content="Matt Busche">
+		<meta name="theme-color" content="#000000">
 		<!-- <link rel="icon" href="../../favicon.ico"> -->
 		<title>Conference PWA</title>
+		<link rel="manifest" href="manifest.json">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 	</head>
 
@@ -50,6 +52,21 @@
 		<div class="starter-template">
 			<h1>Really Cool Conference App</h1>
 			<p class="lead">Welcome!</p>
+		</div>
+		<h2>Schedule</h2>
+		<div class="table-responsive">
+			<table id="schedule" class="table table-striped">
+			<thead>
+				<tr>
+					<td>Title</td>
+					<td>Speaker</td>
+					<td>Start</td>
+					<td>End</td>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+			</table>
 		</div>
 	</div>
 
