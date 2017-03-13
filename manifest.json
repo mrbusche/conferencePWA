@@ -1,0 +1,13 @@
+{
+	"name": "Conference POC",
+	"short_name": "Conference POC",
+	"icons": [{
+		"src": "images/icons/icon-128x128.png",
+			"sizes": "128x128",
+			"type": "image/png"
+		}],
+	"start_url": "/index.html",
+	"display": "standalone",
+	"background_color": "#FCD116",
+	"theme_color": "#000000"
+}
