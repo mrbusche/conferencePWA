@@ -1,5 +1,5 @@
 {
-   "LASTUPDATE":"",
+   "LASTUPDATE":"2017-04-05T02:19:03.605Z",
    "SESSIONS":[
       {
          "STARTTIME":"August, 06 2017 12:00:00",
@@ -13,6 +13,13 @@
          "ENDTIME":"August, 06 2017 13:50:00",
          "TITLE":"All the Things",
          "SPEAKER":"Taryn Busche",
+         "DESCRIPTION":"We'll talk about all the things"
+      },
+      {
+         "STARTTIME":"August, 06 2017 14:00:00",
+         "ENDTIME":"August, 06 2017 14:50:00",
+         "TITLE":"JavaScript",
+         "SPEAKER":"Scott Busche",
          "DESCRIPTION":"We'll talk about all the things"
       }
    ]
