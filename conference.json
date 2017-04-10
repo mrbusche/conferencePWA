@@ -21,6 +21,13 @@
          "TITLE":"JavaScript",
          "SPEAKER":"Scott Busche",
          "DESCRIPTION":"We'll talk about all the things"
+      },
+      {
+         "STARTTIME":"August, 06 2017 15:00:00",
+         "ENDTIME":"August, 06 2017 15:50:00",
+         "TITLE":"New Session",
+         "SPEAKER":"Russell Westbrook",
+         "DESCRIPTION":"Why not"
       }
    ]
 }
