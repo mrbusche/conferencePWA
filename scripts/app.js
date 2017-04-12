@@ -32,6 +32,7 @@
 
 	app.updateConfSchedule = function(data) {
 		var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+		var months =  ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 		console.log('update conf schedule');
 		var sessions = data.SESSIONS;
 		var start = new Date();
@@ -40,11 +41,20 @@
 		for (var session in sessions) {
 			var oneSession = sessions[session];
 			var sessionDate = new Date(oneSession.STARTTIME);
+			var AMPM = sessionDate.getHours() >= 12 ? 'PM' : 'AM';
+			var hours = sessionDate.getHours() > 12 ? sessionDate.getHours() - 12 : sessionDate.getHours();
+			var sessionTime = hours + ':' + (sessionDate.getMinutes() < 10 ? '0' : '') + sessionDate.getMinutes() + AMPM;
 			var dayOfSession = sessionDate.getDay();
 			if (currentDayOfSession !== dayOfSession) {
 				dayCount++;
 				currentDayOfSession = dayOfSession;
 				var tableHeaderRef = document.getElementById('schedule' + dayCount).getElementsByTagName('thead')[0];
+				var headerName = document.createElement("h3");
+				var textDate = months[sessionDate.getMonth()] + ' ' + sessionDate.getDate();
+				var headerContent = document.createTextNode(days[dayOfSession] + ', ' + textDate);
+				headerName.appendChild(headerContent);
+				var tableHeaderName = document.getElementsByTagName('body').parentNode;
+				tableHeaderRef.insertBefore(headerName, tableHeaderName);
 				var newHeaderRow = tableHeaderRef.insertRow(0);
 				newHeaderCell = newHeaderRow.insertCell(0);
 				newHeaderCell.appendChild(document.createTextNode('Time'));
@@ -59,7 +69,7 @@
 			var tableRef = document.getElementById('schedule' + dayCount).getElementsByTagName('tbody')[0];
 			var newRow = tableRef.insertRow(0);
 			newCell = newRow.insertCell(0);
-			newCell.appendChild(document.createTextNode(oneSession.STARTTIME));
+			newCell.appendChild(document.createTextNode(sessionTime));
 			var newCell = newRow.insertCell(1);
 			newCell.appendChild(document.createTextNode(oneSession.TITLE));
 			newCell = newRow.insertCell(2);
