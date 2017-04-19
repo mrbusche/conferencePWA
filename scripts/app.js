@@ -1,7 +1,10 @@
 (function() {
 	'use strict';
 
-	var app = {};
+	var app = {
+		isLoading: true,
+		spinner: document.querySelector('.spinner')
+	};
 
 	app.getConferenceData = function(key, label) {
 		var url = 'http://127.0.0.1:8080/conference.json';
@@ -22,10 +25,6 @@
 		request.onreadystatechange = function() {
 			if (request.readyState === XMLHttpRequest.DONE && request.response) {
 				var response = JSON.parse(request.response);
-				// console.log('cache time');
-				// console.log(document.getElementById('lastUpdate').innerHTML);
-				// console.log('http time');
-				// console.log(response.LASTUPDATE);
 				//if the timestamps are the same, no need to update
 				if (document.getElementById('lastUpdate').innerHTML !== response.LASTUPDATE) {
 					app.updateConfSchedule(response);
@@ -38,7 +37,7 @@
 
 	app.updateConfSchedule = function(data) {
 		var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-		var months =  ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+		var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 		console.log('update conf schedule');
 		var sessions = data.SESSIONS;
 		var start = new Date();
@@ -84,7 +83,13 @@
 			newCell.appendChild(document.createTextNode(oneSession.ROOM));
 			tableRef.insertRow(tableRef.rows.length);
 		}
-		console.log('total time :: ' & new Date() - start);
+		console.log('total time :: ');
+		console.log(new Date() - start);
+
+		if (app.isLoading) {
+			app.spinner.setAttribute('hidden', true);
+			app.isLoading = false;
+		}
 	};
 
 	if ('serviceWorker' in navigator) {
