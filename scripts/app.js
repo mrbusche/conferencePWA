@@ -10,6 +10,8 @@
 				if (response) {
 					response.json().then(function updateFromCache(json) {
 						console.log('from cache');
+						console.log(json.LASTUPDATE);
+						document.getElementById('lastUpdate').innerHTML = json.LASTUPDATE;
 						app.updateConfSchedule(json);
 					});
 				}
@@ -18,11 +20,15 @@
 		// Fetch the latest data.
 		var request = new XMLHttpRequest();
 		request.onreadystatechange = function() {
-			if (request.readyState === XMLHttpRequest.DONE) {
-				if (request.status === 200) {
-					console.log('from request');
-					console.log(request);
-					app.updateConfSchedule(request.response);
+			if (request.readyState === XMLHttpRequest.DONE && request.response) {
+				var response = JSON.parse(request.response);
+				// console.log('cache time');
+				// console.log(document.getElementById('lastUpdate').innerHTML);
+				// console.log('http time');
+				// console.log(response.LASTUPDATE);
+				//if the timestamps are the same, no need to update
+				if (document.getElementById('lastUpdate').innerHTML !== response.LASTUPDATE) {
+					app.updateConfSchedule(response);
 				}
 			}
 		};
