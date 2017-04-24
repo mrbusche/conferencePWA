@@ -3,12 +3,13 @@
 
 	var app = {
 		isLoading: true,
-		spinner: document.querySelector('.spinner')
+		spinner: document.querySelector('.spinner'),
+		cacheSupported: 'caches' in window
 	};
 
 	app.getConferenceData = function(key, label) {
 		var url = 'http://127.0.0.1:8080/conference.json';
-		if ('caches' in window) {
+		if (app.cacheSupported) {
 			caches.match(url).then(function(response) {
 				if (response) {
 					response.json().then(function updateFromCache(json) {
@@ -25,8 +26,8 @@
 		request.onreadystatechange = function() {
 			if (request.readyState === XMLHttpRequest.DONE && request.response) {
 				var response = JSON.parse(request.response);
-				//if the timestamps are the same, no need to update
-				if (document.getElementById('lastUpdate').innerHTML !== response.LASTUPDATE) {
+				//if the timestamps are the same, no need to update. Always update if cache isn't supported
+				if (document.getElementById('lastUpdate').innerHTML !== response.LASTUPDATE || !app.cacheSupported) {
 					app.updateConfSchedule(response);
 				}
 			}
