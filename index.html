@@ -13,70 +13,59 @@
 		<link rel="stylesheet" type="text/css" href="styles/styles.css">
 	</head>
 
-	<style type="text/css">
-		body {
-			padding-top: 5rem;
-		}
-		.starter-template {
-			padding: 3rem 1.5rem;
-			text-align: center;
-		}
-	</style>
-
 	<body>
+		<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<a class="navbar-brand" href="#">Conference PWA</a>
+			<div id="lastUpdate" hidden>2017-04-05T02:19:03.605Z</div><!-- http-server is too fast, so default the timestamp here -->
+			<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Schedule</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Speakers</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Map</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
 
-	<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
-		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<a class="navbar-brand" href="#">Conference PWA</a>
-		<div id="lastUpdate" hidden>2017-04-05T02:19:03.605Z</div><!-- http-server is too fast, so default the timestamp here -->
-		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active">
-					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Schedule</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Speakers</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Map</a>
-				</li>
-			</ul>
+		<div class="container">
+			<div class="starter-template">
+				<h1>Really Cool Conference App</h1>
+				<p class="lead">Welcome!</p>
+			</div>
+			<!-- <h2>Schedule</h2> -->
+			<div class="table-responsive">
+				<table id="schedule1" class="table table-striped"><thead></thead><tbody></tbody></table>
+				<table id="schedule2" class="table table-striped"><thead></thead><tbody></tbody></table>
+				<table id="schedule3" class="table table-striped"><thead></thead><tbody></tbody></table>
+				<table id="schedule4" class="table table-striped"><thead></thead><tbody></tbody></table>
+			</div>
 		</div>
-	</nav>
 
-	<div class="container">
-		<div class="starter-template">
-			<h1>Really Cool Conference App</h1>
-			<p class="lead">Welcome!</p>
+		<div class="spinner">
+			<div class="r1"></div>
+			<div class="r2"></div>
+			<div class="r3"></div>
+			<div class="r4"></div>
+			<div class="r5"></div>
 		</div>
-		<!-- <h2>Schedule</h2> -->
-		<div class="table-responsive">
-			<table id="schedule1" class="table table-striped"><thead></thead><tbody></tbody></table>
-			<table id="schedule2" class="table table-striped"><thead></thead><tbody></tbody></table>
-			<table id="schedule3" class="table table-striped"><thead></thead><tbody></tbody></table>
-			<table id="schedule4" class="table table-striped"><thead></thead><tbody></tbody></table>
-		</div>
-	</div>
 
-	<div class="spinner">
-		<div class="r1"></div>
-		<div class="r2"></div>
-		<div class="r3"></div>
-		<div class="r4"></div>
-		<div class="r5"></div>
-	</div>
-
-	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-	<script>window.jQuery || document.write('<script src="jquery.min.js"><\/script>')</script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-	<!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
-	<script src="scripts/app.js" async></script>
+		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+		<script>window.jQuery || document.write('<script src="jquery.min.js"><\/script>')</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
+		<script src="scripts/app.js" async></script>
 	</body>
 </html>
