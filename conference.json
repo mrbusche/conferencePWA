@@ -26,12 +26,68 @@
          "ROOM":"122A"
       },
       {
-         "STARTTIME":"August 07, 2017 15:00:00",
-         "ENDTIME":"August 07, 2017 15:50:00",
+         "STARTTIME":"August 07, 2017 08:00:00",
+         "ENDTIME":"August 07, 2017 08:50:00",
          "TITLE":"New Session",
          "SPEAKER":"Russell Westbrook",
          "DESCRIPTION":"Why not",
          "ROOM":"122B"
+      },
+      {
+         "STARTTIME":"August 07, 2017 09:00:00",
+         "ENDTIME":"August 07, 2017 09:50:00",
+         "TITLE":"New Session 2",
+         "SPEAKER":"Random Person",
+         "DESCRIPTION":"",
+         "ROOM":"122C"
+      },
+      {
+         "STARTTIME":"August 07, 2017 10:00:00",
+         "ENDTIME":"August 07, 2017 10:50:00",
+         "TITLE":"New Session 3",
+         "SPEAKER":"Random Person 3",
+         "DESCRIPTION":"",
+         "ROOM":"122D"
+      },
+      {
+         "STARTTIME":"August 07, 2017 11:00:00",
+         "ENDTIME":"August 07, 2017 11:50:00",
+         "TITLE":"New Session 4",
+         "SPEAKER":"Random Person 4",
+         "DESCRIPTION":"",
+         "ROOM":"122E"
+      },
+      {
+         "STARTTIME":"August 07, 2017 12:00:00",
+         "ENDTIME":"August 07, 2017 12:50:00",
+         "TITLE":"New Session 5",
+         "SPEAKER":"Random Person 5",
+         "DESCRIPTION":"",
+         "ROOM":"123A"
+      },
+      {
+         "STARTTIME":"August 07, 2017 13:00:00",
+         "ENDTIME":"August 07, 2017 13:50:00",
+         "TITLE":"New Session 6",
+         "SPEAKER":"Random Person 6",
+         "DESCRIPTION":"",
+         "ROOM":"123B"
+      },
+      {
+         "STARTTIME":"August 07, 2017 14:00:00",
+         "ENDTIME":"August 07, 2017 14:50:00",
+         "TITLE":"New Session 7",
+         "SPEAKER":"Random Person 7",
+         "DESCRIPTION":"",
+         "ROOM":"123C"
+      },
+      {
+         "STARTTIME":"August 07, 2017 15:00:00",
+         "ENDTIME":"August 07, 2017 15:50:00",
+         "TITLE":"New Session 8",
+         "SPEAKER":"Random Person 8",
+         "DESCRIPTION":"",
+         "ROOM":"123D"
       }
    ]
 }
