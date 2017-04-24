@@ -73,7 +73,7 @@
 				tableHeaderRef.insertRow(tableHeaderRef.rows.length);
 			}
 			var tableBodyRef = document.getElementById('schedule' + dayCount).getElementsByTagName('tbody')[0];
-			var newRow = tableBodyRef.insertRow(0);
+			var newRow = tableBodyRef.insertRow(tableBodyRef.rows.length);
 			newCell = newRow.insertCell(0);
 			newCell.appendChild(document.createTextNode(sessionTime));
 			var newCell = newRow.insertCell(1);
@@ -82,7 +82,6 @@
 			newCell.appendChild(document.createTextNode(oneSession.SPEAKER));
 			newCell = newRow.insertCell(3);
 			newCell.appendChild(document.createTextNode(oneSession.ROOM));
-			tableBodyRef.insertRow(tableBodyRef.rows.length);
 		}
 		console.log('total time :: ');
 		console.log(new Date() - start);
