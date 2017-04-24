@@ -8,7 +8,8 @@
 	};
 
 	app.getConferenceData = function(key, label) {
-		var url = 'http://127.0.0.1:8080/conference.json';
+		//var url = 'http://127.0.0.1:8080/conference.json';
+		var url = 'https://matthewbusche.com/pwa/conference.json';
 		if (app.cacheSupported) {
 			caches.match(url).then(function(response) {
 				if (response) {
@@ -94,7 +95,7 @@
 
 	if ('serviceWorker' in navigator) {
 		navigator.serviceWorker
-			.register('service-worker.js')
+			.register('./service-worker.js')
 			.then(function() {
 				console.log('Service Worker Registered');
 			});
