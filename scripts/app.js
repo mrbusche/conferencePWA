@@ -53,17 +53,17 @@
 			if (currentDayOfSession !== dayOfSession) {
 				dayCount++;
 				currentDayOfSession = dayOfSession;
-				var tableHeaderRef = document.getElementById('schedule' + dayCount).getElementsByTagName('thead')[0];
-				var headerName = document.createElement("h3");
 				var textDate = months[sessionDate.getMonth()] + ' ' + sessionDate.getDate();
 				var headerContent = document.createTextNode(days[dayOfSession] + ', ' + textDate);
+				var headerName = document.createElement("h3");
 				headerName.appendChild(headerContent);
-				var tableHeaderName = document.getElementsByTagName('body').parentNode;
-				tableHeaderRef.insertBefore(headerName, tableHeaderName);
+				var tableRef = document.getElementById('schedule' + dayCount);
+				tableRef.parentNode.insertBefore(headerName, tableRef);
+				var tableHeaderRef = document.getElementById('schedule' + dayCount).getElementsByTagName('thead')[0];
 				var newHeaderRow = tableHeaderRef.insertRow(0);
-				newHeaderCell = newHeaderRow.insertCell(0);
+				var newHeaderCell = newHeaderRow.insertCell(0);
 				newHeaderCell.appendChild(document.createTextNode('Time'));
-				var newHeaderCell = newHeaderRow.insertCell(1);
+				newHeaderCell = newHeaderRow.insertCell(1);
 				newHeaderCell.appendChild(document.createTextNode('Title'));
 				newHeaderCell = newHeaderRow.insertCell(2);
 				newHeaderCell.appendChild(document.createTextNode('Speaker'));
@@ -71,8 +71,8 @@
 				newHeaderCell.appendChild(document.createTextNode('Room'));
 				tableHeaderRef.insertRow(tableHeaderRef.rows.length);
 			}
-			var tableRef = document.getElementById('schedule' + dayCount).getElementsByTagName('tbody')[0];
-			var newRow = tableRef.insertRow(0);
+			var tableBodyRef = document.getElementById('schedule' + dayCount).getElementsByTagName('tbody')[0];
+			var newRow = tableBodyRef.insertRow(0);
 			newCell = newRow.insertCell(0);
 			newCell.appendChild(document.createTextNode(sessionTime));
 			var newCell = newRow.insertCell(1);
@@ -81,7 +81,7 @@
 			newCell.appendChild(document.createTextNode(oneSession.SPEAKER));
 			newCell = newRow.insertCell(3);
 			newCell.appendChild(document.createTextNode(oneSession.ROOM));
-			tableRef.insertRow(tableRef.rows.length);
+			tableBodyRef.insertRow(tableBodyRef.rows.length);
 		}
 		console.log('total time :: ');
 		console.log(new Date() - start);
