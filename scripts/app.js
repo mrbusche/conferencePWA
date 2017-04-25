@@ -46,7 +46,7 @@
 		var sessions = data.SESSIONS;
 		var currentDayOfSession = '';
 		var dayCount = 0;
-		for (var session in sessions) {
+		for (var session = 0; session < sessions.length; session++) {
 			var oneSession = sessions[session];
 			var sessionDate = new Date(oneSession.STARTTIME);
 			var dayOfSession = sessionDate.getDay();
@@ -72,7 +72,7 @@
 		if (header !== null) {
 			header.remove();
 		}
-	}
+	};
 
 	app.createNewTable = function(dayCount) {
 		var body = document.getElementById('schedule');
@@ -84,7 +84,7 @@
 		newTable.appendChild(tableHead);
 		newTable.appendChild(tableBody);
 		body.appendChild(newTable);
-	}
+	};
 
 	app.addTableHeaders = function(dayCount, sessionDate, dayOfSession) {
 		var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -103,7 +103,7 @@
 		newHeaderRow.insertCell(2).outerHTML = '<th>Speaker</th>';
 		newHeaderRow.insertCell(3).outerHTML = '<th>Room</th>';
 		tableHeaderRef.insertRow(tableHeaderRef.rows.length);
-	}
+	};
 
 	app.addTableData = function(dayCount, oneSession, sessionDate) {
 		var AMPM = sessionDate.getHours() >= 12 ? 'PM' : 'AM';
@@ -119,7 +119,7 @@
 		newCell.appendChild(document.createTextNode(oneSession.SPEAKER));
 		newCell = newRow.insertCell(3);
 		newCell.appendChild(document.createTextNode(oneSession.ROOM));
-	}
+	};
 
 	if ('serviceWorker' in navigator) {
 		navigator.serviceWorker
