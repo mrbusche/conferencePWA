@@ -113,14 +113,10 @@
 		tableRef.parentNode.insertBefore(headerName, tableRef);
 		var tableHeaderRef = document.getElementById('schedule' + dayCount).getElementsByTagName('thead')[0];
 		var newHeaderRow = tableHeaderRef.insertRow(0);
-		var newHeaderCell = newHeaderRow.insertCell(0);
-		newHeaderCell.appendChild(document.createTextNode('Time'));
-		newHeaderCell = newHeaderRow.insertCell(1);
-		newHeaderCell.appendChild(document.createTextNode('Title'));
-		newHeaderCell = newHeaderRow.insertCell(2);
-		newHeaderCell.appendChild(document.createTextNode('Speaker'));
-		newHeaderCell = newHeaderRow.insertCell(3);
-		newHeaderCell.appendChild(document.createTextNode('Room'));
+		newHeaderRow.insertCell(0).outerHTML = '<th>Time</th>';
+		newHeaderRow.insertCell(1).outerHTML = '<th>Title</th>';
+		newHeaderRow.insertCell(2).outerHTML = '<th>Speaker</th>';
+		newHeaderRow.insertCell(3).outerHTML = '<th>Room</th>';
 		tableHeaderRef.insertRow(tableHeaderRef.rows.length);
 	}
 
