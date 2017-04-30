@@ -2,8 +2,8 @@ var dataCacheName = 'conferenceData-v1';
 var cacheName = 'conferenceApp-1';
 var filesToCache = [
 	'/',
-	'/index.html',
-	'/scripts/app.js'
+	'/pwa/index.html',
+	'/pwa/scripts/app.js'
 ];
 
 self.addEventListener('install', function(e) {
@@ -32,7 +32,7 @@ self.addEventListener('activate', function(e) {
 });
 
 self.addEventListener('fetch', function(e) {
-	var currentDomain = window.location.href;
+	var currentDomain = e.target.location.host;
 	var dataUrl = currentDomain + '/conference.json';
 	// when it's the dataUrl we always want to get fresh data
 	if (e.request.url.indexOf(dataUrl) > -1) {
