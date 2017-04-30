@@ -32,7 +32,8 @@ self.addEventListener('activate', function(e) {
 });
 
 self.addEventListener('fetch', function(e) {
-	var dataUrl = 'http://127.0.0.1:8080/conference.json';
+	var currentDomain = window.location.href;
+	var dataUrl = currentDomain + '/conference.json';
 	// when it's the dataUrl we always want to get fresh data
 	if (e.request.url.indexOf(dataUrl) > -1) {
 		e.respondWith(
