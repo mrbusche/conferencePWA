@@ -8,8 +8,8 @@
 	};
 
 	app.getConferenceData = function(key, label) {
-		var url = 'http://127.0.0.1:8080/conference.json';
-		//var url = 'https://matthewbusche.com/pwa/conference.json';
+		var currentDomain = window.location.href;
+		var url = currentDomain + '/conference.json';
 		if (app.cacheSupported) {
 			caches.match(url).then(function(response) {
 				if (response) {
