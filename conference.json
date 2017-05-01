@@ -1,5 +1,5 @@
 {
-   "LASTUPDATE":"2017-04-24T02:19:03.614Z",
+   "LASTUPDATE":"2017-04-30T21:00:03.615Z",
    "SESSIONS":[
       {
          "STARTTIME":"August 06, 2017 12:00:00",
@@ -8,6 +8,30 @@
          "SPEAKER":"Matt Busche",
          "DESCRIPTION":"Overview of PWAs",
          "ROOM":"121A"
+      },
+      {
+         "STARTTIME":"August 06, 2017 12:00:00",
+         "ENDTIME":"August 06, 2017 12:50:00",
+         "TITLE":"Session Title 2",
+         "SPEAKER":"Speaker 2",
+         "DESCRIPTION":"Description 2",
+         "ROOM":"121B"
+      },
+      {
+         "STARTTIME":"August 06, 2017 12:00:00",
+         "ENDTIME":"August 06, 2017 12:50:00",
+         "TITLE":"Session Title 3",
+         "SPEAKER":"Speaker 3",
+         "DESCRIPTION":"Description 3",
+         "ROOM":"121C"
+      },
+      {
+         "STARTTIME":"August 06, 2017 12:00:00",
+         "ENDTIME":"August 06, 2017 12:50:00",
+         "TITLE":"Session Title 4",
+         "SPEAKER":"Speaker 4",
+         "DESCRIPTION":"Description 4",
+         "ROOM":"121D"
       },
       {
          "STARTTIME":"August 06, 2017 13:00:00",
