@@ -46,7 +46,9 @@
 		console.log('update conf schedule');
 		var sessions = data.SESSIONS;
 		var currentDayOfSession = '';
+		var currentSessionTime = '';
 		var dayCount = 0;
+		var timeCount = 0;
 		for (var session = 0; session < sessions.length; session++) {
 			var oneSession = sessions[session];
 			var sessionDate = new Date(oneSession.STARTTIME);
@@ -59,6 +61,16 @@
 				app.createNewTable(dayCount);
 				app.addTableHeaders(dayCount, sessionDate, dayOfSession);
 			}
+
+			timeCount++;
+			var AMPM = sessionDate.getHours() >= 12 ? 'PM' : 'AM';
+			var hours = sessionDate.getHours() > 12 ? sessionDate.getHours() - 12 : sessionDate.getHours();
+			var timeOfSession = hours + ':' + (sessionDate.getMinutes() < 10 ? '0' : '') + sessionDate.getMinutes() + AMPM;
+			if (currentSessionTime !== timeOfSession) {
+				currentSessionTime = timeOfSession;
+				app.addTimeHeader(dayCount, timeOfSession, timeCount);
+			}
+
 			app.addTableData(dayCount, oneSession, sessionDate);
 		}
 
@@ -99,12 +111,20 @@
 		tableRef.parentNode.insertBefore(headerName, tableRef);
 		var tableHeaderRef = document.getElementById('schedule' + dayCount).getElementsByTagName('thead')[0];
 		var newHeaderRow = tableHeaderRef.insertRow(0);
-		newHeaderRow.insertCell(0).outerHTML = '<th>Time</th>';
-		newHeaderRow.insertCell(1).outerHTML = '<th>Title</th>';
-		newHeaderRow.insertCell(2).outerHTML = '<th>Speaker</th>';
-		newHeaderRow.insertCell(3).outerHTML = '<th>Room</th>';
+		newHeaderRow.insertCell(0).outerHTML = '<th>Title</th>';
+		newHeaderRow.insertCell(1).outerHTML = '<th>Speaker</th>';
+		newHeaderRow.insertCell(2).outerHTML = '<th>Room</th>';
 		tableHeaderRef.insertRow(tableHeaderRef.rows.length);
 	};
+
+	app.addTimeHeader = function(dayCount, timeOfSession, timeCount) {
+		var headerName = document.createElement('h4');
+		headerName.setAttribute('id', 'time' + timeCount);
+		var timeContent = document.createTextNode(timeOfSession);
+		headerName.appendChild(timeContent);
+		var tableRef = document.getElementById('header' + dayCount);
+		tableRef.appendChild(headerName, tableRef);
+	}
 
 	app.addTableData = function(dayCount, oneSession, sessionDate) {
 		var AMPM = sessionDate.getHours() >= 12 ? 'PM' : 'AM';
@@ -113,12 +133,12 @@
 		var newRow = tableBodyRef.insertRow(tableBodyRef.rows.length);
 		var sessionTime = hours + ':' + (sessionDate.getMinutes() < 10 ? '0' : '') + sessionDate.getMinutes() + AMPM;
 		var newCell = newRow.insertCell(0);
-		newCell.appendChild(document.createTextNode(sessionTime));
+		var boldElement = document.createElement('b');
+		boldElement.innerHTML = oneSession.TITLE;
+		newCell.appendChild(boldElement);
 		newCell = newRow.insertCell(1);
-		newCell.appendChild(document.createTextNode(oneSession.TITLE));
-		newCell = newRow.insertCell(2);
 		newCell.appendChild(document.createTextNode(oneSession.SPEAKER));
-		newCell = newRow.insertCell(3);
+		newCell = newRow.insertCell(2);
 		newCell.appendChild(document.createTextNode(oneSession.ROOM));
 	};
 
