@@ -33,6 +33,7 @@ self.addEventListener('activate', function(e) {
 
 self.addEventListener('fetch', function(e) {
 	var currentDomain = e.target.location.host;
+	currentDomain = currentDomain.indexOf('127.0.0.1') > -1 ? 'http://127.0.0.1:8080/pwa' : 'https://matthewbusche.com/pwa';
 	var dataUrl = currentDomain + '/conference.json';
 	// when it's the dataUrl we always want to get fresh data
 	if (e.request.url.indexOf(dataUrl) > -1) {

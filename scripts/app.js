@@ -9,6 +9,7 @@
 
 	app.getConferenceData = function(key, label) {
 		var currentDomain = window.location.href;
+		currentDomain = currentDomain.indexOf('127.0.0.1') > -1 ? 'http://127.0.0.1:8080/pwa' : 'https://matthewbusche.com/pwa';
 		var url = currentDomain + '/conference.json';
 		if (app.cacheSupported) {
 			caches.match(url).then(function(response) {
